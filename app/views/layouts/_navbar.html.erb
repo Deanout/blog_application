@@ -10,21 +10,14 @@
           <%= link_to "Home", root_path, class:'nav-link'%>
         </li>
         <li class="nav-item">
+          <%= link_to "Blog", posts_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "About", about_path, class:'nav-link'%>
         </li>
       </ul>
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
+        <%= render 'user/session_manager' %>
       </ul>
     </div>
   </div>
