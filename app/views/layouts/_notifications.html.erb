@@ -1,0 +1,25 @@
+<% if current_user && @unread.count > 0 || @read.count > 0 %>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <% if @unread.count != 0%>
+        <span class="position-absolute top-100 start-50 translate-middle badge rounded-pill bg-danger"><%= @unread.count >= 9 ? "9+" : @unread.count %></span>
+      <% end %>
+      <i class="bi bi-heart"></i>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+      <% @unread.each do |notification| %>
+        <li class="dropdown-item">
+          <%= link_to notification.to_notification.message, notification.to_notification.url %>
+        </li>
+      <% end %>
+      <% if @read.count > 0 && @unread.count > 0 %>
+        <li><hr class="dropdown-divider"></li>
+      <% end %>
+      <% @read.each do |notification| %>
+        <li class="dropdown-item">
+          <%= link_to notification.to_notification.message, notification.to_notification.url %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>

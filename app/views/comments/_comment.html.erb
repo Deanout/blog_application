@@ -3,10 +3,26 @@
   <%= comment.user.email %><br />
   <span>Posted <%= time_ago_in_words(comment.created_at) %></span>
   <% if current_user == comment.user %>
-    <div class="button-group float-end">
+    <div class="btn-group float-end">
+      <%= link_to "Edit", nil,
+       remote: true,
+        class:"btn btn-warning",
+        data: {
+          controller: "comments",
+          action: "comments#toggleForm",
+          comments_form_param: "edit-form-#{comment.id}",
+          comments_body_param: "comment-body-#{comment.id}"
+          } %>
       <%= button_to "Delete", [post, comment], class:"btn btn-danger", method: :delete %>
+    </div>
+    <div id="edit-form-<%= comment.id %>" class="d-none">
+      <%= render 'comments/form',
+      post: @post,
+      comment: comment %>
     </div>
   <% end %>
   <hr />
-  <%= comment.body %>
+  <div id="comment-body-<%= comment.id %>">
+    <%= comment.body %>
+  </div>
 </div>
