@@ -1,7 +1,11 @@
 <div class="comment-<%= comment.id %> container"
     style="border: 1px solid black; padding: 1em; margin: 1em;">
   <%= comment.user.email %><br />
-  <span>Posted <%= time_ago_in_words(comment.created_at) %></span>
+  <% if (comment.updated_at - comment.created_at) > 1 %>
+    <span>Edited <%= time_ago_in_words(comment.updated_at) %> ago</span>
+  <% else %>
+    <span>Posted <%= time_ago_in_words(comment.created_at) %> ago</span>
+  <% end %>
   <% if current_user == comment.user %>
     <div class="btn-group float-end">
       <%= link_to "Edit", nil,
@@ -18,7 +22,8 @@
     <div id="edit-form-<%= comment.id %>" class="d-none">
       <%= render 'comments/form',
       post: @post,
-      comment: comment %>
+      comment: comment,
+      submit_label: "Update" %>
     </div>
   <% end %>
   <hr />
