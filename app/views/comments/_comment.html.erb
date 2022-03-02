@@ -14,7 +14,9 @@
         action: "comments#toggleForm",
         comments_form_param: "edit-form-#{comment.id}",
         comments_body_param: "comment-body-#{comment.id}",
-      } %>
+        comments_edit_param: "edit-button-#{comment.id}"
+      },
+      id: "edit-button-#{comment.id}" %>
       <%= button_to "Delete", [post, comment], class:"btn btn-danger", method: :delete %>
     </div>
     <div id="edit-form-<%= comment.id%>" class="d-none">
