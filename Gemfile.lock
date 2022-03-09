@@ -198,6 +198,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    ransack (2.5.0)
+      activerecord (>= 5.2.4)
+      activesupport (>= 5.2.4)
+      i18n
     redis (4.5.1)
     regexp_parser (2.2.0)
     reline (0.3.1)
@@ -266,6 +270,7 @@ DEPENDENCIES
   noticed (~> 1.5)
   puma (~> 5.0)
   rails (~> 7.0.1)
+  ransack (~> 2.5)
   redis (~> 4.0)
   selenium-webdriver
   sprockets-rails
