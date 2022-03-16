@@ -20,7 +20,6 @@ class AdminControllerTest < ActionDispatch::IntegrationTest
     get admin_users_url
     assert_response :success
   end
-
   test "should get show_post" do
     get admin_show_post_url
     assert_response :success
