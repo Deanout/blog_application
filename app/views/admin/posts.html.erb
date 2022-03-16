@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="text-center">Adminstrator</h1>
+  <%= render 'admin/nav_links' %>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Post</th>
+        <th scope="col">Author</th>
+        <th scope="col">Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <th scope="row"><%= post.id %></th>
+          <td><%= link_to post.title.truncate(15), admin_post_path(post) %></td>
+          <td><%= post.user.name %></td>
+          <td><%= pluralize(post.comments.size, "Comment") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
