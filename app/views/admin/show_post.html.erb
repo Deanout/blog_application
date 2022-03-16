@@ -4,7 +4,7 @@
   <div class="text-center mt-5">
     <div class="btn-group">
       <%= link_to "Edit", edit_post_path(@post), class:"btn btn-warning" %>
-      <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+      <%= button_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
     </div>
   </div>
   <div class="row mt-1">
@@ -30,7 +30,6 @@
     <% @post.comments.each do |comment| %>
       <div class="row mt-1">
         <%= comment.user.name %>
-        <%= button_to "Delete", [@post, comment], class:"btn btn-danger", method: :delete %>
         <%= comment.body %>
       </div>
     <% end %>
