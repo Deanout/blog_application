@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  enum role: [:user, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+
+  private
+
+  def set_default_role
+    self.role ||= :user
+  end
 end
