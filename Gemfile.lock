@@ -102,6 +102,8 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http (5.0.4)
@@ -264,6 +266,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  friendly_id (~> 5.4)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
