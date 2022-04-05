@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_03_30_053548) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -25,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_03_30_053548) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -45,14 +48,14 @@ ActiveRecord::Schema.define(version: 2022_03_30_053548) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
-    t.integer "blob_id", null: false
+    t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -72,9 +75,9 @@ ActiveRecord::Schema.define(version: 2022_03_30_053548) do
 
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
-    t.integer "recipient_id", null: false
+    t.bigint "recipient_id", null: false
     t.string "type", null: false
-    t.json "params"
+    t.jsonb "params"
     t.datetime "read_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -87,7 +90,7 @@ ActiveRecord::Schema.define(version: 2022_03_30_053548) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "views", default: 0
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "slug"
     t.integer "comments_count"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
