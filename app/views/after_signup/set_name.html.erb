@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Set Your Name</h1>
+  <%= form_for @user, method: :put, url: wizard_path do |f| %>
+    <% if f.object.errors.any? %>
+      <div class="error_messages">
+        <% f.object.errors.full_messages.each do |error| %>
+          <p style="color: red"><%= error %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="form-control">
+      <legend>Your Name</legend>
+      <%= f.text_field :first_name, class: "form-control", placeholder: "First name...", required: true %>
+      <%= f.text_field :last_name, class: "form-control", placeholder: "Last name...", required: true %>
+    </div>
+    <div class="d-flex flex-row-reverse">
+      <%= f.submit 'Next Step', class:"btn btn-primary" %>
+    </div>
+  <% end %>
+  <style>
+    div.field_with_errors {
+      display: inline;
+    }
+  </style>
+</div>

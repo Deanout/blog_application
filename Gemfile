@@ -82,3 +82,5 @@ gem "friendly_id", "~> 5.4"
 gem "bullet", "~> 7.0"
 
 gem "activerecord-import", "~> 1.3"
+
+gem "wicked", "~> 1.4"
