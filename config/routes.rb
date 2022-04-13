@@ -9,12 +9,14 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#index'
 
-  get 'users/profile'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
   get '/u/:id', to: 'users#profile', as: 'user'
+  resources :after_signup
+  post 'after_signup/update_address', to: 'after_signup#update_address'
+  post 'users/:id/update_address', to: 'users#update_address', as: 'user_address'
 
   # /posts/1/comments/4
   resources :posts do

@@ -1,0 +1,8 @@
+<h1>Users to follow</h1>
+<strong>i didn't implement following, just pretend</strong>
+<br />
+<h3><%= link_to "Finish", next_wizard_path %></h3>
+<% @users.each do |user| %>
+  <p><%= "[#{user.id}] #{user.email}" %></p>
+<% end %>
+<%= render "after_signup/links" %>
