@@ -1,5 +1,5 @@
 <%= search_form_for(@query, url: search_path, method: :get, class:'d-flex') do |f| %>
-  <%= f.search_field :title_or_content_body_or_user_email_or_user_first_name_or_user_last_name_i_cont_any,
+  <%= f.search_field :title_or_content_body_or_user_email_or_user_first_name_or_user_last_name_or_category_name_i_cont_any,
    placeholder: "Search...",
    class: "form-control me-2" %>
   <%= f.submit "Search!", class:"btn btn-outline-success" %>

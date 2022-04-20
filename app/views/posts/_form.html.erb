@@ -12,6 +12,7 @@
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
+    <%= form.select :category_id, options_for_select(Category.all.collect {|cat| [cat.name, cat.id]})%>
   </div>
   <div>
     <%= form.label :body, style: "display: block" %>

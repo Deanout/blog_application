@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   has_rich_text :body
 
   belongs_to :user
+  belongs_to :category 
   has_many :comments, dependent: :destroy
 
   has_rich_text :body
@@ -13,6 +14,7 @@ class Post < ApplicationRecord
 
   has_noticed_notifications model_name: 'Notification'
   has_many :notifications, through: :user
+  
 
   friendly_id :title, use: %i[slugged history finders]
 

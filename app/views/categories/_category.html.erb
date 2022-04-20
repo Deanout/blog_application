@@ -1,0 +1,13 @@
+<div id="<%= dom_id category %>" class="container">
+  <p>
+    <strong>Name:</strong>
+    <%= category.name %>
+  </p>
+  <% category.posts.each do |post| %>
+    <div class="row">
+      <div class="col">
+        <%= link_to post.title, post %>
+      </div>
+    </div>
+  <% end %>
+</div>
