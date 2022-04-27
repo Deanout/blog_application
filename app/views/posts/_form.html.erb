@@ -14,6 +14,10 @@
     <%= form.text_field :title %>
   </div>
   <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select :category_id, options_for_select(Category.all.order(name: :desc).collect { |cat| [cat.name, cat.id]})%>
+  </div>
+  <div>
     <%= form.label :body, style: "display: block" %>
     <%= form.rich_text_area :body %>
   </div>

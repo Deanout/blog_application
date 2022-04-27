@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<% if current_user&.admin? %>
+  <div class="btn-group mt-5 mb-5">
+    <%= link_to "Edit this category", edit_category_path(@category), class:"btn btn-warning" %>
+    <%= button_to "Destroy this category", @category, method: :delete, class:"btn btn-danger" %>
+  </div>
+<% end %>
+<%= render @category %>
+<div>
+  <%= link_to "Back to categories", categories_path %>
+</div>
