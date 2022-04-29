@@ -14,10 +14,14 @@
     <%= form.text_field :title %>
   </div>
   <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.rich_text_area :body %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select :category_id, options_for_select(Category.all.order(name: :asc)
+        .collect { |cat| [cat.name, cat.id] }) %>
+    <div>
+      <%= form.label :body, style: "display: block" %>
+      <%= form.rich_text_area :body %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>

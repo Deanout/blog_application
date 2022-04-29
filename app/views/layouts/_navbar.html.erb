@@ -13,7 +13,7 @@
           <%= link_to "Blog", posts_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "About", about_path, class:'nav-link'%>
+          <%= render 'layouts/categories', categories: @nav_categories %>
         </li>
       </ul>
       <ul class="navbar-nav">
