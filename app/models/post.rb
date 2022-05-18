@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   extend FriendlyId
   validates :title, presence: true, length: { minimum: 5, maximum: 50 }
   validates :body, presence: true
-
+  belongs_to :category
   has_rich_text :body
   belongs_to :category
 

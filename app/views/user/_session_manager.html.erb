@@ -7,6 +7,7 @@
       <li><%= link_to "Admin", admin_path, class:"dropdown-item" if current_user.admin? %></li>
       <li><%= link_to "New Category", new_category_path, class:"dropdown-item" if current_user.admin? %></li>
       <li><%= link_to "New Post", new_post_path, class:"dropdown-item" %></li>
+
       <li><a class="dropdown-item" href="#">Action</a></li>
       <li><%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item" %></li>
       <li><hr class="dropdown-divider"></li>
