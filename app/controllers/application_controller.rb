@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_categories
-    @nav_categories = Category.where(display_in_nav: :true)
+    @nav_categories = Category.where(display_in_nav: true).order(:name)
   end
 
   def set_notifications

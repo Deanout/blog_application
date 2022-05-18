@@ -12,7 +12,9 @@
         <li class="nav-item">
           <%= link_to "Blog", posts_path, class:"nav-link" %>
         </li>
-        <%= render "layouts/categories", categories: @nav_categories %>
+        <li class="nav-item">
+          <%= render 'layouts/categories', categories: @nav_categories %>
+        </li>
       </ul>
       <ul class="navbar-nav">
         <%= render 'search/form' %>

@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   validates :body, presence: true
   belongs_to :category
   has_rich_text :body
+  belongs_to :category
 
   belongs_to :user
   has_many :comments, dependent: :destroy

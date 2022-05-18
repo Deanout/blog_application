@@ -30,11 +30,13 @@ Address.first_or_create(street: '123 Main St',
                         zip: '12345',
                         country: 'USA',
                         user: john)
+
 category = Category.first_or_create!(name: 'Uncategorized', display_in_nav: true)
 Category.first_or_create!(name: 'General', display_in_nav: true)
 Category.first_or_create!(name: 'Finance', display_in_nav: true)
 Category.first_or_create!(name: 'Health', display_in_nav: false)
 Category.first_or_create!(name: 'Education', display_in_nav: false)
+
 elapsed = Benchmark.measure do
   posts = []
   10.times do |x|
