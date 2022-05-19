@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include SubscriptionConcern
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -50,7 +51,7 @@ class User < ApplicationRecord
     form_steps.index(step.to_s) <= form_steps.index(form_step.to_s)
   end
 
-  def stripe_attributes
+  def stripe_attributes(pay_customer)
     {
       address: {
         city: pay_customer.owner.city,
