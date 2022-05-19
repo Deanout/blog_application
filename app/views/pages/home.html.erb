@@ -4,13 +4,21 @@
   <div class="card-actions mb-3">
     <%= link_to "About Me", about_path, class:"btn btn-secondary" %>
     <%= link_to "Blog", posts_path, class:"btn btn-primary" %>
-    <%= link_to "Buy My Super Deluxe™ Cat!", checkout_path, class:"btn btn-success" %>
+    <%= link_to "Buy My Super Deluxe™ Cat!", checkout_path(
+      line_items: ['price_1Ky9sDFFRI5KMv5ysJnIEe9O'], 
+      payment_mode: 'payment'
+    ), class:"btn btn-success" %>
+    <%= link_to "Subscribe To Me!", checkout_path(
+      line_items: ['price_1L0iLwFFRI5KMv5yDsOW7eqQ'],
+        payment_mode: 'subscription'
+    ), 
+    class:"btn btn-success" %>
   </div>
 </div>
 <% if current_user %>
   <div class="container card mt-4">
     <h2>User Info</h2>
-    <%= link_to "Manage Billing", @portal_session.url %>
+    <%= link_to "Manage Billing", @portal_session.url unless @portal_session.nil? %>
     <h3><%= current_user.full_name %></h1>
     <ul>
       <li><%= current_user.address.street.titleize %></li>
