@@ -16,6 +16,9 @@
           <%= link_to "Members", members_dashboard_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to "Portfolio", projects_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= render 'layouts/categories', categories: @nav_categories %>
         </li>
       </ul>

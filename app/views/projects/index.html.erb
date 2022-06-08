@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<div class="container">
+  <h1>Projects</h1>
+  <p>This page contains my most recent projects, feel free to look around!</p>
+  <p>Web projects contain a link to the demo, while other projects contain other relevant links.</p>
+  <div id="projects">
+    <% @projects.each do |project| %>
+      <%= render project %>
+    <% end %>
+  </div>
+</div>
