@@ -7,6 +7,7 @@
       <%= button_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
     </div>
   </div>
+  <%= area_chart @post.views_by_day, colors: ["#a00a"] %>
   <div class="row mt-1">
     <p>
       <strong>Title:</strong> <%= @post.title %>
