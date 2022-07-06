@@ -93,3 +93,5 @@ gem "ahoy_matey", "~> 4.1"
 gem "groupdate", "~> 6.1"
 
 gem "chartkick", "~> 4.2"
+
+gem "acts_as_list", "~> 1.0"
