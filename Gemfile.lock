@@ -95,6 +95,7 @@ GEM
       xpath (~> 3.2)
     chartkick (4.2.0)
     childprocess (4.1.0)
+    chronic (0.10.2)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     debug (1.4.0)
@@ -276,6 +277,8 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     wicked (1.4.0)
       railties (>= 3.0.7)
     xpath (3.2.0)
@@ -315,6 +318,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  whenever (~> 1.0)
   wicked (~> 1.4)
 
 RUBY VERSION
