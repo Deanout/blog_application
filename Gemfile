@@ -51,6 +51,11 @@ gem 'image_processing', '~> 1.2'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+
+  ## These are for the debugger
+  gem 'debase', '~> 0.2.4'
+  gem 'ruby-debug-ide', '~> 0.7.3'
+  ## End debugger gems
 end
 
 group :development do
