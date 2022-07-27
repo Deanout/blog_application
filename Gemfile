@@ -10,7 +10,7 @@ gem 'rails', '~> 7.0.1'
 gem 'sprockets-rails'
 
 # Use pg as the database for Active Record
-gem "pg", "~> 1.1"
+gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -46,7 +46,7 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -55,6 +55,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
@@ -73,27 +75,27 @@ end
 
 gem 'devise'
 
-gem "noticed", "~> 1.5"
+gem 'noticed', '~> 1.5'
 
-gem "ransack", "~> 2.5"
+gem 'ransack', '~> 2.5'
 
-gem "friendly_id", "~> 5.4"
+gem 'friendly_id', '~> 5.4'
 
-gem "bullet", "~> 7.0"
+gem 'bullet', '~> 7.0'
 
-gem "activerecord-import", "~> 1.3"
+gem 'activerecord-import', '~> 1.3'
 
-gem "wicked", "~> 1.4"
+gem 'wicked', '~> 1.4'
 
-gem "stripe", "~> 6.0"
-gem "pay", "~> 4.0"
+gem 'pay', '~> 4.0'
+gem 'stripe', '~> 6.0'
 
-gem "ahoy_matey", "~> 4.1"
+gem 'ahoy_matey', '~> 4.1'
 
-gem "groupdate", "~> 6.1"
+gem 'groupdate', '~> 6.1'
 
-gem "chartkick", "~> 4.2"
+gem 'chartkick', '~> 4.2'
 
-gem "acts_as_list", "~> 1.0"
+gem 'acts_as_list', '~> 1.0'
 
-gem "whenever", "~> 1.0"
+gem 'whenever', '~> 1.0'

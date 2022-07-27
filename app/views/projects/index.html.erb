@@ -7,9 +7,9 @@
     <% @projects.each do |project| %>
       <% if current_user&.admin? %>
         <%= render "projects/draggable", project: project %>
-        <% else %>
-          <%= render project %>
-        <% end %>
+      <% else %>
+        <%= render project %>
+      <% end %>
     <% end %>
   </div>
 </div>
