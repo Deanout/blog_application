@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Start the Rails service
+start() {
+  echo "Starting Rails service..."
+  # working directory
+  # run as user "dean"
+  # run as group "dean"
+
+  cd /code/youtube/rails/blog_application
+  start-stop-daemon --start --quiet --pidfile /var/run/rails.pid --exec `/home/dean/.rvm/gems/ruby-3.0.3/wrappers/rails server -p 3000`
+
+}
+
+# Restart the Rails service
+restart() {
+  echo "Restarting Rails service..."
+  cd /code/youtube/rails/blog_application
+  start-stop-daemon --stop --quiet --pidfile /var/run/rails.pid --exec /home/dean/.rvm/gems/ruby-3.0.3/wrappers/rails server -p 3000
+  start-stop-daemon --start --quiet --pidfile /var/run/rails.pid --exec /home/dean/.rvm/gems/ruby-3.0.3/wrappers/rails server -p 3000
+  [ $? -eq 0 ] && success || failure
+}
+
+# Stop the Rails service
+stop() {
+  echo "Stopping Rails service..."
+  cd /code/youtube/rails/blog_application
+  start-stop-daemon --stop --quiet --pidfile /var/run/rails.pid --exec /home/dean/.rvm/gems/ruby-3.0.3/wrappers/rails server -p 3000
+
+}
+
+### Main ###
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  restart)
+    restart
+    ;;
+  *)
+    echo "Usage: rails_blog_sysv {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+

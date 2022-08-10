@@ -1,0 +1,17 @@
+# Creates a Rails service
+[Unit]
+Description=Rails service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/usr/bin/bash -lc 'bundle exec rails server'
+TimeoutSec=30
+
+
+[Install]
+WantedBy=multi-user.target
