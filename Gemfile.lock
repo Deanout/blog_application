@@ -127,7 +127,7 @@ GEM
       rake
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
-    globalid (1.0.0)
+    globalid (1.0.1)
       activesupport (>= 5.0)
     groupdate (6.1.0)
       activesupport (>= 5.2)
@@ -166,7 +166,7 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
-    minitest (5.16.2)
+    minitest (5.17.0)
     msgpack (1.5.4)
     net-imap (0.2.3)
       digest
